@@ -117,11 +117,9 @@ app.get("/bookings", async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-}); 
- 
+});
 
 app.post("/bookings", async (req, res) => {
-  console.log(req.body)
   const room = await Room.findOne({ roomNumber: req.body.roomNumber });
   const existingBooking = await Booking.findOne({
     roomNumber: req.body.roomNumber,
@@ -133,16 +131,16 @@ app.post("/bookings", async (req, res) => {
   } else if (!room) {
     res.status(400).json({ message: "Room does not exist" });
   } else {
-    const booking = new Booking(req.body)
-      // userEmail: req.body.userEmail,
-      // userName: req.body.userName,
-      // roomNumber: req.body.roomNumber,
-      // startTime: req.body.startTime,
-      // endTime: req.body.endTime,
-      // price: req.body.price,
-      // paymentType: req.body.paymentType,
-      // tip: req.body.tip,;
-
+    const booking = new Booking({
+      userEmail: req.body.userEmail,
+      userName: req.body.userName,
+      roomNumber: req.body.roomNumber,
+      startTime: req.body.startTime,
+      endTime: req.body.endTime,
+      price: req.body.price,
+      paymentType: req.body.paymentType,
+      tip: req.body.tip,
+    });
     try {
       const newBooking = await booking.save();
       res.status(201).json(newBooking);

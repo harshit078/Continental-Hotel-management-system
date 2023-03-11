@@ -22,7 +22,7 @@ function BookingCard({ booking }) {
       <Card.Body>
         <Card.Title>{`Room Number: ${booking.roomNumber}`}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">
-          {`Guest's Name: ${booking.userName}`}
+          {/* {`Guest's Name: ${booking.userName}`} */}
         </Card.Subtitle>
         <Card.Text>
           <strong>Price: </strong>
