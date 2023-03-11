@@ -13,7 +13,7 @@ function BookingCard({ booking }) {
     return newDate.toLocaleDateString("en-US", options);
   }
   const newPrice = booking.price.toLocaleString("en-IN", {
-    maximumFractionDigits: 3,
+    maximumFractionDigits: 2,
     style: "currency",
     currency: "INR",
   });
@@ -25,21 +25,28 @@ function BookingCard({ booking }) {
           {/* {`Guest's Name: ${booking.userName}`} */}
         </Card.Subtitle>
         <Card.Text>
+
           <strong>Price: </strong>
           {`${newPrice}`}
+
         </Card.Text>
+
         <Card.Text>
           <strong>Booking Start Date: </strong>
           {`${getDate(booking.startTime)}`}
         </Card.Text>
+
         <Card.Text>
           <strong>Booking End Date: </strong>
           {`${getDate(booking.endTime)}`}
         </Card.Text>
+
         <Link to="/update" state={booking}>
           <button className="btn btn-secondary btn1">Update</button>
         </Link>
+
       </Card.Body>
+      
     </Card>
   );
 }
