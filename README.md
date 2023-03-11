@@ -1,7 +1,7 @@
 
-# Hotel Mangement System
+# Continental Hotel Mangement System
 
-> Tech Stack Used: React.js, Node.js, Bootstrap.css, Axios
+> Tech Stack Used: React.js, Node.js, Bootstrap.css, MongoDB
 
 ## Prerequisite
 * Use the package manager to install applications prerequisite node_modules for both backend and frontend
